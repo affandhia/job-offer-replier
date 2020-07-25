@@ -18,7 +18,7 @@
 </style>
 
 <div class="container">
-  <div class="left">
+  <div class="left sticky">
     {useReply($replies[index]).text}
   </div>
   <div class="right">
