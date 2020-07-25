@@ -17,8 +17,8 @@
 
 <div class="container">
   {#if data.type === fieldType.TEXT}
-  <Textbox bind:data={data} key={key} index={index} />
+  <Textbox bind:data={data} key={key} />
   {:else if data.type === fieldType.RADIO}
-  <Radio bind:data={data} key={key} index={index} />
+  <Radio bind:data={data} key={key} />
   {/if}
 </div>

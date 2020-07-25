@@ -1,12 +1,6 @@
 <script>
   import { recruiterName, recruiterCompany, replies } from "./_common/stores.js";
   import Reply from "./replyItem/Reply.svelte";
-
-  const handleUpdate = index => reply => {
-    replies.update(replies =>
-      replies.map((oldReply, i) => (i === index ? reply : oldReply))
-    );
-  };
 </script>
 
 <style>
@@ -17,8 +11,8 @@
 </style>
 
 <div class="container">
-  {#each $replies as reply, i}
-    <Reply data={reply} onUpdate={handleUpdate(i)}/>
+  {#each $replies as _, i}
+    <Reply index={i} />
   {/each}
 </div>
 
