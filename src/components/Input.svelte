@@ -1,6 +1,16 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
+
   export let value
   export let placeholder
+
+  const handleKeyPress = (e) => {
+    if(e.code === 'Enter') {
+      dispatch('enterpress' , { value });
+    }
+  }
 </script>
 
 <input
@@ -10,4 +20,5 @@
   focus:bg-white focus:border-gray-500"
   bind:value
   placeholder={placeholder}
+  on:keypress={handleKeyPress}
   />
