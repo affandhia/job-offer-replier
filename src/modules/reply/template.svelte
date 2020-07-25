@@ -2,6 +2,6 @@
 	import Replies from "./Replies.svelte";
 </script>
 
-<div>
+<div class="w-full">
 	<Replies />
 </div>

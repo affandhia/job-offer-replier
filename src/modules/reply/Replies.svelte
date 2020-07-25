@@ -3,14 +3,7 @@
   import Reply from "./replyItem/Reply.svelte";
 </script>
 
-<style>
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-</style>
-
-<div class="container">
+<div class="flex flex-col w-full">
   {#each $replies as _, i}
     <Reply index={i} />
   {/each}

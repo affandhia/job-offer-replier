@@ -7,18 +7,13 @@
 </script>
 
 <style>
-  .container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
   .left {
     white-space: pre-wrap;
   }
 </style>
 
-<div class="container">
-  <div class="left sticky">
+<div class="flex flex-row w-full items-start">
+  <div class="left sticky top-0">
     {useReply($replies[index]).text}
   </div>
   <div class="right">
