@@ -12,6 +12,6 @@
 
 <div class="container">
   {#each Object.keys(fields) as key, i}
-    <Field bind:key={key} index={i} bind:data={fields[key]} />
+    <Field bind:key={key} bind:data={fields[key]} />
   {/each}
 </div>
