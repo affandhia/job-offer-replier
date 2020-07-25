@@ -5,7 +5,9 @@ import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
-import postcss from "rollup-plugin-postcss";
+import livereload from "rollup-plugin-livereload";
+import serve from "rollup-plugin-serve";
+import autoPreprocess from "svelte-preprocess";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -18,8 +20,10 @@ export default {
     file: "public/bundle.js"
   },
   plugins: [
-    postcss({ extract: true, minimize: true }),
     svelte({
+      preprocess: autoPreprocess({
+        postcss: true
+      }),
       // enable run-time checks when not in production
       dev: !production,
       // we'll extract any component CSS out into
@@ -36,6 +40,29 @@ export default {
     // https://github.com/rollup/rollup-plugin-commonjs
     resolve(),
     commonjs(),
+    !production &&
+      serve({
+        // Launch in browser (default: false)
+        open: true,
+
+        // Show server address in console (default: true)
+        verbose: true,
+
+        // Folder to serve files from
+        contentBase: "public",
+
+        // Set to true to return index.html (200) instead of error page (404)
+        historyApiFallback: true,
+
+        // Options used in setting up server
+        host: "localhost",
+        port: 10001
+      }),
+    !production &&
+      livereload({
+        watch: "public",
+        verbose: true
+      }),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify

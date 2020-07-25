@@ -2,13 +2,10 @@
 	import Reply from "./modules/reply/template.svelte";
 </script>
 
-<style>
-  main {
-    font-family: sans-serif;
-    width: 100%;
-  }
+<style global lang="postcss">
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 </style>
 
-<main>
-	<Reply />
-</main>
+<Reply />
