@@ -2,13 +2,11 @@
   export let data;
   export let key;
 
-  const handleChange = e => {
-    console.log(e.target.value);
-  };
+  import Input from "../../../components/Input.svelte";
 </script>
 
 <style>
 </style>
 
 <label>{key}</label>
-<input type="text" bind:value={data.value}/>
+<Input bind:value={data.value} />
