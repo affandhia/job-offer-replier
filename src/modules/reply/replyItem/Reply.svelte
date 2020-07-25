@@ -33,7 +33,6 @@
   }
 </style>
 {@debug fields}
-<button on:click={handleClick}>Change</button>
 <div class="container">
   <div class="left">
     {pack.text}

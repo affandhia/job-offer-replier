@@ -1,5 +1,5 @@
 <script>
-	import Reply from "./modules/reply/template.svelte";
+  import Reply from "./modules/reply/template.svelte";
 </script>
 
 <style global lang="postcss">

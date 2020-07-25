@@ -20,7 +20,6 @@
 </style>
 
 <div class="container">
-<button on:click={handleClick}>Change</button>
   {#each keys as key, i}
     <Field bind:key={key} index={i} bind:data={fields[key]} />
   {/each}
