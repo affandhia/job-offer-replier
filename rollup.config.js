@@ -1,36 +1,35 @@
 // this file will not afect the sandbox but will
 // afect the deployment and dowload
 
-import svelte from "rollup-plugin-svelte";
-import resolve from "rollup-plugin-node-resolve";
-import commonjs from "rollup-plugin-commonjs";
-import { terser } from "rollup-plugin-terser";
-import livereload from "rollup-plugin-livereload";
-import serve from "rollup-plugin-serve";
-import autoPreprocess from "svelte-preprocess";
+import svelte from 'rollup-plugin-svelte'
+import resolve from 'rollup-plugin-node-resolve'
+import commonjs from 'rollup-plugin-commonjs'
+import { terser } from 'rollup-plugin-terser'
+import livereload from 'rollup-plugin-livereload'
+import autoPreprocess from 'svelte-preprocess'
 
-const production = !process.env.ROLLUP_WATCH;
+const production = !process.env.ROLLUP_WATCH
 
 export default {
-  input: "index.js",
+  input: 'index.js',
   output: {
     sourcemap: true,
-    format: "iife",
-    name: "app",
-    file: "public/bundle.js"
+    format: 'iife',
+    name: 'app',
+    file: 'public/bundle.js',
   },
   plugins: [
     svelte({
       preprocess: autoPreprocess({
-        postcss: true
+        postcss: true,
       }),
       // enable run-time checks when not in production
       dev: !production,
       // we'll extract any component CSS out into
       // a separate file — better for performance
       css: css => {
-        css.write("public/bundle.css");
-      }
+        css.write('public/bundle.css')
+      },
     }),
 
     // If you have external dependencies installed from
@@ -41,31 +40,13 @@ export default {
     resolve(),
     commonjs(),
     !production &&
-      serve({
-        // Launch in browser (default: false)
-        open: true,
-
-        // Show server address in console (default: true)
-        verbose: true,
-
-        // Folder to serve files from
-        contentBase: "public",
-
-        // Set to true to return index.html (200) instead of error page (404)
-        historyApiFallback: true,
-
-        // Options used in setting up server
-        host: "localhost",
-        port: 10001
-      }),
-    !production &&
       livereload({
-        watch: "public",
-        verbose: true
+        watch: 'public',
+        verbose: true,
       }),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
-    production && terser()
-  ]
-};
+    production && terser(),
+  ],
+}
