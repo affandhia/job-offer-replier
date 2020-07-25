@@ -3,14 +3,9 @@
   export let label;
   export let placeholder;
 
-  import Input from "./Input.svelte";
+  import Input from "src/components/Input.svelte";
+  import Label from "src/components/Label.svelte";
 </script>
 
-<style>
-</style>
-
-<label 
-  class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-  {label}
-</label>
+<Label text={label} /> 
 <Input bind:value placeholder={placeholder} />

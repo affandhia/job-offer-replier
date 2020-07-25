@@ -5,17 +5,9 @@
 
   export let data;
   export let key;
-  export let index;
 </script>
 
-<style>
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-</style>
-
-<div class="container">
+<div class="flex flex-col my-2 py-4 px-2 rounded bg-gray-100">
   {#if data.type === fieldType.TEXT}
   <Textbox bind:data={data} key={key} />
   {:else if data.type === fieldType.RADIO}

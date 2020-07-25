@@ -2,11 +2,15 @@
 // afect the deployment and dowload
 
 import svelte from 'rollup-plugin-svelte'
-import resolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
+import commonjs from '@rollup/plugin-commonjs'
+import alias from '@rollup/plugin-alias'
+import resolve from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 import livereload from 'rollup-plugin-livereload'
 import autoPreprocess from 'svelte-preprocess'
+
+import path from 'path'
+const projectRootDir = path.resolve(__dirname)
 
 const production = !process.env.ROLLUP_WATCH
 
@@ -37,6 +41,11 @@ export default {
     // some cases you'll need additional configuration —
     // consult the documentation for details:
     // https://github.com/rollup/rollup-plugin-commonjs
+    alias({
+      entries: [
+        { find: 'src', replacement: path.resolve(projectRootDir, 'src') },
+      ],
+    }),
     resolve(),
     commonjs(),
     !production &&

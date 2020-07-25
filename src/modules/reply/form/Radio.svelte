@@ -1,4 +1,7 @@
 <script>
+  import Label from "src/components/Label.svelte";
+  import { camelToTitle } from "src/utils/stringUtils.js";
+
   export let data;
   export let key;
 
@@ -17,18 +20,11 @@
   $: value, updateData();
 </script>
 
-<style>
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-</style>
+<Label text={camelToTitle(key)} />
 
-<label>{key}</label>
-
-<fieldset class="container" id={key}>
+<fieldset class="flex flex-col" id={key}>
   {#each data.value as item, i}
-    <label>
+    <label class={i === value ? "text-xs text-gray-700" : "text-xs text-gray-500"}>
       <input type="radio" bind:group={value} value={i}>
       {item.text}
     </label>
