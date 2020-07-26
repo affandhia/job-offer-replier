@@ -6,6 +6,7 @@
   import Toolbar from "src/modules/reply/textEditor/Toolbar.svelte";
   import { useReply } from "./useReply.js";
   export let index;
+  
   let reply = $replies[index];
   $: text = useReply(reply).text.trim();
 </script>
@@ -18,7 +19,7 @@
     <div class="mt-2 py-4 px-4 bg-gray-100 text-gray-800 rounded">
       <Toolbar>
       </Toolbar>
-      <img src={Icon} height="32" width="32" alt="icon image" />
+      <img src={Icon} height="32" width="32" alt="icon" />
       <pre class="whitespace-pre-wrap text-xs">{text}</pre>
     </div>
   </div>
