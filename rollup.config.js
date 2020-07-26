@@ -5,6 +5,7 @@ import svelte from 'rollup-plugin-svelte'
 import commonjs from '@rollup/plugin-commonjs'
 import alias from '@rollup/plugin-alias'
 import resolve from '@rollup/plugin-node-resolve'
+import image from '@rollup/plugin-image'
 import { terser } from 'rollup-plugin-terser'
 import livereload from 'rollup-plugin-livereload'
 import autoPreprocess from 'svelte-preprocess'
@@ -41,6 +42,7 @@ export default {
     // some cases you'll need additional configuration —
     // consult the documentation for details:
     // https://github.com/rollup/rollup-plugin-commonjs
+    image(),
     alias({
       entries: [
         { find: 'src', replacement: path.resolve(projectRootDir, 'src') },
@@ -53,7 +55,6 @@ export default {
         watch: 'public',
         verbose: true,
       }),
-
     // If we're building for production (npm run build
     // instead of npm run dev), minify
     production && terser(),

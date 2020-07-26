@@ -1,6 +1,8 @@
 <script>
   import Label from "src/components/Label.svelte";
   import Input from "src/components/Input.svelte";
+  import RadioGroup from "src/components/RadioGroup.svelte";
+  import Radio from "src/components/Radio.svelte";
   import { camelToTitle } from "src/utils/stringUtils.js";
 
   export let data;
@@ -39,18 +41,15 @@
 </script>
 
 <Label text={camelToTitle(key)} />
-
-{@debug value}
 <fieldset class="flex flex-col" id={key}>
+  <RadioGroup>
   {#each data.value as item, i}
     <div class="flex flex-row items-center w-full">
-    <label class={i === value ? "text-xs text-gray-700 flex-auto" : "text-xs text-gray-500 flex-auto"}>
-      <input type="radio" bind:group={value} value={i}>
-      {item.text}
-    </label>
-    <button on:click={() => handleRemove(i)} class="text-red-400 rounded border border-red-400 hover:bg-red-400 hover:text-white px-2 py-0 font-bold">{'x'}</button>
+      <Radio value={i} bind:group={value} label={item.text} />
+      <button on:click={() => handleRemove(i)} class="text-xs text-red-400 rounded-full border border-red-400 hover:bg-red-400 hover:text-white px-2 py-0 ml-2 font-bold">{'x'}</button>
     </div>
   {/each}
+  </RadioGroup>
   <div class="mt-4">
     <Input bind:value={newEntry} placeholder="add new option" on:enterpress={handleEnter}/>
   </div>

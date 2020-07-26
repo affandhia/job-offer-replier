@@ -3,14 +3,7 @@
   export let fields;
 </script>
 
-<style>
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-</style>
-
-<div class="container">
+<div class="flex flex-col">
   {#each Object.keys(fields) as key, i}
     <Field bind:key={key} bind:data={fields[key]} />
   {/each}
