@@ -44,7 +44,7 @@
 <fieldset class="flex flex-col" id={key}>
   <RadioGroup>
   {#each data.value as item, i}
-    <div class="flex flex-row items-center w-full">
+    <div class="flex flex-row items-center w-full my-1 first:mt-0">
       <Radio value={i} bind:group={value} label={item.text} />
       <button on:click={() => handleRemove(i)} class="text-xs text-red-400 rounded-full border border-red-400 hover:bg-red-400 hover:text-white px-2 py-0 ml-2 font-bold">{'x'}</button>
     </div>
