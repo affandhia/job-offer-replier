@@ -1,4 +1,4 @@
-import { fieldType } from "./constans";
+import { fieldType } from './constants'
 
 // IF YOU’RE INTERESTED IN THE OPPORTUNITY:
 const interestedText = `Hi $$recruiterName,
@@ -12,75 +12,75 @@ Thank you,
 $$name
 $$signature
 
-`;
+`
 
 export const interested = {
   value: interestedText,
   fields: {
     recruiterName: {
       type: fieldType.TEXT,
-      value: ""
+      value: '',
     },
     recruiterCompany: {
       type: fieldType.TEXT,
-      value: ""
+      value: '',
     },
     name: {
       type: fieldType.TEXT,
-      value: ""
+      value: '',
     },
     signature: {
       type: fieldType.TEXT,
-      value: ""
+      value: '',
     },
     jobTitle: {
       type: fieldType.TEXT,
-      value: ""
+      value: '',
     },
     commonality: {
       type: fieldType.RADIO,
       value: [
         {
           isSelected: false,
-          text: "Thank you for reaching out with this awesome opportunity"
+          text: 'Thank you for reaching out with this awesome opportunity',
         },
         {
           isSelected: true,
           text:
-            "It's great to connect with someone at $$recruiterCompany company — I’ve admired your work"
-        }
-      ]
+            "It's great to connect with someone at $$recruiterCompany company — I’ve admired your work",
+        },
+      ],
     },
     interesting: {
       type: fieldType.RADIO,
       value: [
-        { isSelected: false, text: "hearing more about the opportunity" },
-        { isSelected: true, text: "learning the specifics of the role" },
-        { isSelected: false, text: "applying formally" }
-      ]
+        { isSelected: false, text: 'hearing more about the opportunity' },
+        { isSelected: true, text: 'learning the specifics of the role' },
+        { isSelected: false, text: 'applying formally' },
+      ],
     },
     thought: {
       type: fieldType.RADIO,
       value: [
-        { isSelected: false, text: "your experience at the company" },
+        { isSelected: false, text: 'your experience at the company' },
         {
           isSelected: false,
-          text: "what the team is specifically looking for"
+          text: 'what the team is specifically looking for',
         },
-        { isSelected: false, text: "why you felt I’d be a great fit" }
-      ]
+        { isSelected: false, text: 'why you felt I’d be a great fit' },
+      ],
     },
     action: {
       type: fieldType.RADIO,
       value: [
-        { isSelected: false, text: "hopping on a call" },
-        { isSelected: false, text: "answering 3-5 quick questions" }
-      ]
-    }
+        { isSelected: false, text: 'hopping on a call' },
+        { isSelected: false, text: 'answering 3-5 quick questions' },
+      ],
+    },
   },
   information:
-    "With this response, you show genuine interest in both the company and the role and show that you are proactive about suggesting next steps. Sure, it’s a job seekers’ market, but there’s no need to play hard to get. If you’re interested, then show it and don’t hesitate to share your interest and preferred mode of communication."
-};
+    'With this response, you show genuine interest in both the company and the role and show that you are proactive about suggesting next steps. Sure, it’s a job seekers’ market, but there’s no need to play hard to get. If you’re interested, then show it and don’t hesitate to share your interest and preferred mode of communication.',
+}
 
 // IF YOU’RE ON THE FENCE:
 const fence = `
@@ -99,7 +99,7 @@ Best,
 [Your name]
 
 Why this works: Sure you’re satisfied in your current job, but if you’re open to the right opportunity, this response allows you to be both honest about your current feelings and leaves room for the possibility of a new role. It signals to a recruiter that you’re open to being sold on the role and considering a new company.
-`;
+`
 // IF YOU’RE INTERESTED IN THE COMPANY, BUT NOT THE ROLE:
 const companyInterested = `Hi [Name],
 
@@ -112,7 +112,7 @@ Best,
 [Your name]
 
 Why this works: If your dream company reaches out to you for a role that’s less than ideal, get your foot in the door by sharing exactly what you’re looking for. Don’t be shy about telling them you’re interested in the company and use the introduction as a way to explore alternative opportunities.
-`;
+`
 // IF THE COMPANY & ROLE ARE NOT INTERESTING:
 const notInterested = `Hi [Name],
 
@@ -123,7 +123,7 @@ Thanks again,
 [Your name]
 
 Why this works: For the sake of your professional brand and to show common courtesy, do not just ignore the recruiter. Even if the opportunity isn’t a right fit now, being humble and thankful are important traits when turning a recruiter down. There’s no need to dwell on why you’re not interested, or to provide excuses. Be direct and clear with your position, and like any smart professional, leave room for continuing the relationship down the line.
-`;
+`
 // IF YOUR DREAM JOB AND COMPANY PRESENT THEMSELVES:
 const dreamJobCompany = `Hi [Name],
 
@@ -139,4 +139,4 @@ Best,
 [Your name]
 
 Why this works: While you may be jumping up and down with excitement because your dream company and job appeared in your inbox, there are better ways to convey your excitement than by sending a response full of exclamation marks and smiley-face emojis. Demonstrate your enthusiasm for the role by responding with a carefully crafted note that reflects both your skills as well as your understanding of the company’s business needs. This combo will show the recruiter that you’re absolutely worth an initial interview.
-`;
+`

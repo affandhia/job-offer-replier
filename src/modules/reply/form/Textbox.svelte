@@ -1,4 +1,5 @@
 <script>
+  export let isError;
   export let data;
   export let key;
 
@@ -10,4 +11,4 @@
 </style>
 
 
-<InputField bind:value={data.value} placeholder={`\$\$${key}`} label={camelToTitle(key)} />
+<InputField bind:value={data.value} placeholder={`\$\$${key}`} label={camelToTitle(key)} {isError} />

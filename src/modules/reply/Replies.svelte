@@ -8,5 +8,3 @@
     <Reply index={i} />
   {/each}
 </div>
-
-<pre>{JSON.stringify($replies, null,2 )}</pre>
