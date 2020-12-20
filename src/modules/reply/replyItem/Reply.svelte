@@ -1,16 +1,27 @@
 <script>
-  import { setContext } from "svelte";
+  import { setContext, onMount } from "svelte";
   import { replies } from "src/modules/reply/_common/stores.js";
   import CopyIcon from 'ionicons/dist/svg/copy-outline.svg'
-  import Form from "src/modules/reply/form/Form.svelte";
+  import TrayForm from "./TrayForm.svelte";
   import Button from "src/components/Button.svelte";
   import Icon from "src/components/Icon.svelte";
   import Toolbar from "src/modules/reply/textEditor/Toolbar.svelte";
   import { useReply } from "./useReply.js";
+  import { showTray } from "src/components/Tray";
   export let index;
   
-  let reply = $replies[index];
+  $: reply = $replies[index];
   $: text = useReply(reply).text.trim();
+
+  onMount(() => {
+    showTray({
+      body: TrayForm,
+      props: {
+        index,
+      },
+      showing: 'full-page',
+    })
+  })
 </script>
 
 <style>
@@ -32,8 +43,5 @@
         <pre class="whitespace-pre-wrap text-xs">{text}</pre>
       </div>
     </div>
-  </div>
-  <div class="max-h-screen overflow-y-scroll mr-4 my-4">
-    <Form bind:fields={reply.fields} />
   </div>
 </div>
