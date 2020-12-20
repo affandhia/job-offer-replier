@@ -78,11 +78,6 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@shopify/draggable@1.0.0-beta.8":
-  version "1.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/@shopify/draggable/-/draggable-1.0.0-beta.8.tgz#2eb3c2f72298ce3e53fe16f34ab124cc495cd4fc"
-  integrity sha512-9IeBPQM93Ad4qFKUopwuTClzoST/1OId4MaSd/8FB5ScCL2tl25UaOGNR8E2hjiL7xK4LN5+I1Ews6amS7YAiA==
-
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
@@ -1168,10 +1163,10 @@ rollup-plugin-svelte-svg@0.2.3:
   dependencies:
     rollup-pluginutils "^1.5.2"
 
-rollup-plugin-svelte@^5.2.3:
-  version "5.2.3"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-svelte/-/rollup-plugin-svelte-5.2.3.tgz#efdc15e3e3fdd9b9f1100fdc14a8532b4e587bc8"
-  integrity sha512-513vOht9A93OV7fvmpIq8mD1JFgTZ5LidmpULKM2Od9P1l8oI5KwvO32fwCnASuVJS1EkRfvCnS7vKQ8DF4srg==
+rollup-plugin-svelte@^6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-svelte/-/rollup-plugin-svelte-6.1.1.tgz#66362cf0500fb7a848283ebcf19d289a60ef0871"
+  integrity sha512-ijnm0pH1ScrY4uxwaNXBpNVejVzpL2769hIEbAlnqNUWZrffLspu5/k9/l/Wsj3NrEHLQ6wCKGagVJonyfN7ow==
   dependencies:
     require-relative "^0.8.7"
     rollup-pluginutils "^2.8.2"
