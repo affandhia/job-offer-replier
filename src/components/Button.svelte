@@ -18,12 +18,6 @@
   let hasChildren = $$props.$$slots && $$props.$$slots.default != null;
 </script>
 
-<style>
-  .large {
-
-  }
-</style>
-
 <button 
   class="flex flex-row items-center bg-gray-100 text-gray-700 focus:text-gray-900 rounded px-2 py-1 text-xs border border-gray-700 font-semibold"
 >

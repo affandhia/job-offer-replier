@@ -19,7 +19,7 @@
       props: {
         index,
       },
-      showing: 'full-page',
+      showing: true,
     })
   })
 </script>
@@ -27,6 +27,7 @@
 <style>
   div :global(.red-icon *) {
     @apply stroke-current text-teal-500 !important;
+
   }
 </style>
 
